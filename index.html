@@ -11,16 +11,23 @@
 <body>
     <nav>
         <img src="keepnote-removebg-preview.png">
-        <input type="text" id="content" placeholder="Ghi chú" value="">
+        <input type="text" id="content" placeholder="Nhập nội dung ghi chú..." value="">
+         <input type="checkbox" id="pin" hidden>
+        <label for="pin"><i class="fa-solid fa-thumbtack"></i></label>
         <button class="save">Save</button>
     </nav>
     <div class="contain-change-note">  
         <div class="change-note">
         <textarea name="textNote" id="change-note"></textarea>
+        <input type="checkbox" id="pin2" hidden>
+        <label for="pin2"><i class="fa-solid fa-thumbtack"></i></label>
         <button id="save-2">Save</button>
         </div> 
     </div>
     <div class="container">
+        <div class="line-text"><span class="text-pin">Đã ghim</span></div>
+        <div class="note-pin"></div>
+        <hr>
         <div class="note">
         </div>
     </div>
