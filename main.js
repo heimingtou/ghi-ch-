@@ -127,9 +127,9 @@ function eventD(d){
     })
     d.addEventListener("click",()=>{
         cNote.value=d.querySelector("p").textContent;
-        cNote.style.height="0px"
-        autosize.update(cNote); 
+        cNote.style.height="fit-content"
         dNote.style.display="inline-block";
+        autosize.update(cNote); 
         let id=d.dataset.id;
         let objNote=notes.find(n=>n.id==id);
         pin2.checked=objNote.check

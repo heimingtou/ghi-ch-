@@ -13,21 +13,23 @@ nav{
     align-items: center;
     gap:10px;
     background-color: black;
-    height: 5rem;
+    height:auto;
     width: 100%;
     z-index: 1;
 }
 nav>img{
     padding: 10px 20px;
     max-height: 300px; 
-    height: 80%;
+    height: 60px;
     width:auto;
 }
 input[type="text"]{
     width: 70%;
-    height:50%;
+    min-height: 2.8rem;
+    height:fit-content;
     border-radius: 5px;
     font-size: 20px;
+    padding-left: 15px;
 }
 .save{
     width: 10%;
@@ -64,8 +66,17 @@ input[type="text"]{
     border: 1.5px solid black;
     margin: 15px;
 }
-.newNote:hover{
-     background-color: rgb(194, 236, 236);
+.trash{
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    position: absolute;
+    top:5px;
+    right: 5px;
+    font-size: 20px;
+    color: #d24314;
+}
+.newNote:hover .trash{
+    opacity: 1;
 }
 .contain-change-note{
     position: fixed;
@@ -89,7 +100,7 @@ input[type="text"]{
 }
 #change-note{
     width: 30rem;
-    min-height: 10rem;
+    height: fit-content;
     font-size: 30px;
     margin-right: 2.5rem;
     margin-top: 3rem;
@@ -100,35 +111,31 @@ input[type="text"]{
 #change-note:focus{
     outline: none;
 }
+.tool{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 3px;
+}
 #save-2{
     width: 5rem;
     height: 3rem;
-    margin-right: 2.5rem;
-    background-color: #eb826f;
+    background-color: #da998e ;
     border: none;
 }
 #save-2:hover{
     background-color: #de2808af;
 }
-.trash{
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    position: absolute;
-    top:5px;
-    right: 5px;
-    font-size: 20px;
-    color: #d24314;
-}
-.newNote:hover .trash{
-    opacity: 1;
-
-}
-#pin+label{
+#pin+label, #pin2+label{
     color: #e1caca;
 }
-#pin:checked+label{
+#pin:checked+label, #pin2:checked+label{
    
     color: #fd0404;
+}
+#pin2+label{
+    margin-right: 15px;
 }
 .container{
     margin-top:5.3rem ;
@@ -157,6 +164,7 @@ hr {
   background-color: #eb826f;
   border-radius: 5px;
   padding:3px 10px;
+  margin: 5px;
 }
 .line-text::before,
 .line-text::after {
@@ -170,11 +178,4 @@ hr {
 .line-text::before
 {
     flex:0.1;
-}
-#pin2+label{
-    color: #e1caca;
-}
-#pin2:checked+label{
-   
-    color: #fd0404;
 }
